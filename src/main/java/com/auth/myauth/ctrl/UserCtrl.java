@@ -1,6 +1,7 @@
 package com.auth.myauth.ctrl;
 
 import com.auth.myauth.service.UserService;
+import com.auth.common.utils.RV;
 import com.auth.myauth.entity.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,8 @@ public class UserCtrl {
 	 * @return
 	 */
 	@RequestMapping(value="login",method=RequestMethod.POST)
-	public @ResponseBody User login(@RequestBody User u) {
-		return userService.longin(u);
+	public @ResponseBody RV login(@RequestBody User u) {
+		return RV.ok(userService.longin(u));
 	}
 	
 	/**
@@ -32,8 +33,8 @@ public class UserCtrl {
 	 * @return
 	 */
 	@RequestMapping(value="createUser",method=RequestMethod.POST)
-	public @ResponseBody User createUser(@RequestBody User u) {
-		userService.createUser(u);
-		return u;
+	public @ResponseBody RV createUser(@RequestBody User u) {
+		
+		return RV.ok(userService.createUser(u));
 	}
 }
