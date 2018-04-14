@@ -64,6 +64,9 @@ public class RV {
 		
 	}
 	
+	public static RV ok() {
+		return new RV("200","success");
+	}
 	///get set
 	public String getCode() {
 		return code;
@@ -107,5 +110,7 @@ public class RV {
 	public void setPages(int pages) {
 		this.pages = pages;
 	}
+
+	
 
 }

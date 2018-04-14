@@ -16,9 +16,10 @@ import javax.persistence.Table;
  */
 @Table(name = "sys_resources")
 public class Resources implements Serializable {
-	private static final long serialVersionUID = 1L;
 	
-	    //主键
+	private static final long serialVersionUID = 8301175178049544396L;
+
+	//主键
     @Id
     private String resId;
 	
