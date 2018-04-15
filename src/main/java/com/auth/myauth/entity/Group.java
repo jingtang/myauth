@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
+
 /**
  * 角色，用户组，岗位
  * 

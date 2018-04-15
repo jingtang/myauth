@@ -1,6 +1,7 @@
 package com.auth.myauth.ctrl;
 
 import com.auth.myauth.service.UserService;
+import com.auth.common.ctrl.BaseCtrl;
 import com.auth.common.utils.RV;
 import com.auth.myauth.entity.User;
 
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("user")
-public class UserCtrl {
+public class UserCtrl extends BaseCtrl<UserService, User>{
 	@Autowired
 	private UserService userService;
 	

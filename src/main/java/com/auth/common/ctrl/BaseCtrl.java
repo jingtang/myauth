@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.auth.common.context.BaseContextHandler;
 import com.auth.common.sevice.BaseService;
 import com.auth.common.utils.RV;
 
@@ -48,6 +49,10 @@ public abstract class BaseCtrl<T extends BaseService<E>,E> {
     public RV list(){
         
         return RV.ok(baseService.selectListAll());
+    }
+    
+    public String getCurrentUserName(){
+        return BaseContextHandler.getUsername();
     }
 
 }

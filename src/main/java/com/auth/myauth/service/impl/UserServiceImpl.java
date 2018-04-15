@@ -3,6 +3,7 @@ package com.auth.myauth.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.auth.common.exception.BaseException;
 import com.auth.common.sevice.impl.BaseServiceImpl;
 import com.auth.common.utils.Utils;
 import com.auth.myauth.dao.UserMapper;
@@ -31,7 +32,10 @@ public class UserServiceImpl extends BaseServiceImpl<UserMapper,User> implements
 	@Override
 	public User longin(User u) {
 		//TODO 校验
-		
-		return userMapper.selectByNameAndPasswd(u.getUserName(),u.getPasswd());
+		User newUser = userMapper.selectByNameAndPasswd(u.getUserName(),u.getPasswd());
+		if(newUser == null){
+			throw new BaseException("401","用户密码错误");
+		}
+		return newUser;
 	}
 }

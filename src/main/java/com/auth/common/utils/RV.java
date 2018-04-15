@@ -1,6 +1,5 @@
 package com.auth.common.utils;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
 
 import com.github.pagehelper.Page;
 
@@ -67,6 +66,13 @@ public class RV {
 	public static RV ok() {
 		return new RV("200","success");
 	}
+	
+	public static RV fail(String code,String msg) {
+		RV rv = new RV(code,msg);
+		//rv.setResult(result);
+		return rv;
+	}
+	
 	///get set
 	public String getCode() {
 		return code;
